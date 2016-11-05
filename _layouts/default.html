@@ -15,37 +15,48 @@
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+  <div id="header">
+            <div class="logo"><a href="#"><img src="https://s12.postimg.org/yp7loxt4d/Writing_from_the_heart_logo.png" alt="Image Not Found" /></a></div>
+            <div class="name">Writing From The Heart, Inc.</div>
+            <div id="topRightBtns">
+                <div class="menu">
+                    <ul>
+                        <li><a href="#" id="signIn">Sign In</a></li>
+                        <li><a href="#" id="signUp">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="#" class="active" id="home" onClick = "toggleActive('home');">Home</a>
+            </li>
 
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
+            <li class="dropdown">
+                <a href="#" class="dropdownbtn" id="aboutMe" onClick = "toggleActive('aboutMe');">About Me</a>
+                <div class="dropdownmenu" id ="aboutMeMenu">
+                    <a href="#" id="childhood">Childhood</a>
+                    <a href="#" id="personality">Personality</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a href="writing" class="dropdownbtn" id="writing" onClick = "toggleActive('writing');">My Writing</a>
+                <div class="dropdownmenu" id ="writingMenu">
+                    <a href="#" class="dropdownmenulink" id="poems">Poems</a>
+                    <a href="#" id="essays">Essays</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdownbtn" id="trivia" onClick="toggleActive('trivia');">Trivia</a>
+                <div class="dropdownmenu">
+                    <a href="#" id="harrypottertrivia"><em>Harry Potter</em> Trivia</a>
+                </div>
+            </li>
+        </ul>
     </div>
-
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
 </html>
